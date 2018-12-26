@@ -2,13 +2,13 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { PageHeader, Banner } from '../utils'
-import img from '../images/bcg/menuBcg.jpeg'
-export default function about() {
+import img from '../images/bcg/propertiesBcg.jpeg'
+export default function properties() {
   return (
     <Layout>
-      <SEO title="Menu" />
+      <SEO title="Contact" />
       <PageHeader img={img}>
-        <Banner title="our menu" subtitle={`let's dig in`} />
+        <Banner title="our properties" subtitle="let's explore" />
       </PageHeader>
     </Layout>
   )

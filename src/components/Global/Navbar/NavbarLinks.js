@@ -17,8 +17,8 @@ export default class NavbarLinks extends Component {
       },
       {
         id: 2,
-        path: '/menu/',
-        name: 'menu',
+        path: '/properties/',
+        name: 'properties',
       },
       {
         id: 3,
@@ -59,7 +59,7 @@ const LinkWrapper = styled.ul`
     ${styles.transDefault};
     &:hover {
       background: ${styles.colors.mainGrey};
-      color: ${styles.colors.mainYellow};
+      color: ${styles.colors.mainPrimary};
       padding: 0.5rem 1rem 0.5rem 1.3rem;
     }
   }
