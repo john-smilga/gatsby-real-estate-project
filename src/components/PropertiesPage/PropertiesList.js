@@ -7,15 +7,15 @@ export default class PropertiesList extends Component {
     return (
       <PropertiesWrapper>
         <ProductConsumer>
-          {data =>
-            data.properties.map(item => (
+          {data => {
+            return data.tempProperties.map(item => (
               <Property
                 key={item.id}
                 property={item}
                 handleProperty={data.handleProperty}
               />
             ))
-          }
+          }}
         </ProductConsumer>
       </PropertiesWrapper>
     )

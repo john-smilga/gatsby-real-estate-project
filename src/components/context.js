@@ -18,6 +18,8 @@ export default class ProductProvider extends Component {
 
     this.state = {
       properties: [],
+      tempProperties: [],
+      singleProperty: {},
     }
   }
   componentDidMount = () => {
