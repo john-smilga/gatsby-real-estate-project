@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
                 }
                 images {
                   fluid(maxWidth: 300) {
-                    src
+                    ...GatsbyContentfulFluid_tracedSVG
                   }
                 }
                 title
@@ -38,6 +38,7 @@ const Layout = ({ children }) => {
                 bathrooms
                 garages
                 city
+                footage
               }
             }
           }

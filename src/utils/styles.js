@@ -42,3 +42,8 @@ export const border = ({
 export const letterSpacing = ({ spacing = '0.1rem' }) => {
   return `letter-spacing:${spacing}`
 }
+
+export const boxShadow = [
+  'box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75)',
+  'box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75)',
+]
