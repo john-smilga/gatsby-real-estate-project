@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { createGlobalStyle } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Navbar from '../components/Global/Navbar'
+import Footer from '../components/Global/Footer'
 import { ProductProvider } from './context'
 // import '../styles/sass/layout.scss'
 
@@ -39,6 +40,7 @@ const Layout = ({ children }) => {
                 garages
                 city
                 footage
+                featured
               }
             }
           }
@@ -50,6 +52,7 @@ const Layout = ({ children }) => {
             <GlobalStyle />
             <Navbar />
             <ProductProvider data={data}>{children}</ProductProvider>
+            <Footer />
           </React.Fragment>
         )
       }}

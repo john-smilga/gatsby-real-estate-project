@@ -18,7 +18,7 @@ const BannerWrapper = styled.div`
   padding: 2rem 4rem;
   border-radius: 0.5rem;
   h1 {
-    color: ${styles.colors.mainWhite};
+    color: ${styles.colors.mainPrimary};
     font-size: 2rem;
     text-transform: uppercase;
     ${styles.letterSpacing({ spacing: '0.75rem' })};
@@ -29,6 +29,7 @@ const BannerWrapper = styled.div`
     ${styles.letterSpacing({ spacing: '0.15rem' })};
     font-size: 1.5rem;
     text-transform: capitalize;
+    margin-bottom: 1rem;
   }
 `
 Banner.defaultProps = {

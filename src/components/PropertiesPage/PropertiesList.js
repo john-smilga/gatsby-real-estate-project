@@ -35,8 +35,12 @@ const PropertiesWrapper = styled.div`
     grid-column-gap: 1rem;
   }
   @media (min-width: 992px) {
-    width: 95vw;
-
+    width: 92vw;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1.5rem;
+  }
+  @media (min-width: 1200px) {
+    width: 80vw;
+    grid-column-gap: 2rem;
   }
 `

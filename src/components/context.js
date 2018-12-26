@@ -20,16 +20,20 @@ export default class ProductProvider extends Component {
       properties: [],
       tempProperties: [],
       singleProperty: {},
+      featuredProperties: [],
     }
   }
   componentDidMount = () => {
     const properties = converter(this.props.data.properties.edges)
     const singleProperty = properties[0]
+    const featuredProperties = properties.filter(item => item.featured === true)
+
     this.setState(() => {
       return {
         properties: properties,
         singleProperty: singleProperty,
         tempProperties: properties,
+        featuredProperties: featuredProperties,
       }
     })
   }
