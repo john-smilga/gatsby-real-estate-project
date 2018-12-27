@@ -108,7 +108,6 @@ export const PropertyWrapper = styled.article`
   ${styles.transition({})};
   &:hover {
     ${styles.boxShadow[1]};
-    cursor: pointer;
   }
   ${styles.border({ color: 'rgba(0,0,0,0.1)' })};
   border-radius: 0.3rem;
