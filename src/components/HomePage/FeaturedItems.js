@@ -1,27 +1,35 @@
 import React, { Component } from 'react'
 import { ProductConsumer } from '../context'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Property from '../PropertiesPage/Property'
-import { Title } from '../../utils'
+import { Title, SectionButton } from '../../utils'
 export default class FeaturedItems extends Component {
   render() {
     return (
-      <FeaturedWrapper>
-        <Title title="properties" message="featured" />
-        <PropertiesWrapper>
-          <ProductConsumer>
-            {data => {
-              return data.featuredProperties.map(item => (
-                <Property
-                  key={item.id}
-                  property={item}
-                  openProperty={data.openProperty}
-                />
-              ))
-            }}
-          </ProductConsumer>
-        </PropertiesWrapper>
-      </FeaturedWrapper>
+      <React.Fragment>
+        <FeaturedWrapper>
+          <Title title="properties" message="featured" />
+          <PropertiesWrapper>
+            <ProductConsumer>
+              {data => {
+                return data.featuredProperties.map(item => (
+                  <Property
+                    key={item.id}
+                    property={item}
+                    openProperty={data.openProperty}
+                  />
+                ))
+              }}
+            </ProductConsumer>
+          </PropertiesWrapper>
+          <Link to="/properties/" style={{ textDecoration: 'none' }}>
+            <SectionButton style={{ margin: '0 auto' }}>
+              properties
+            </SectionButton>
+          </Link>
+        </FeaturedWrapper>
+      </React.Fragment>
     )
   }
 }

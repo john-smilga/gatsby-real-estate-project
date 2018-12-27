@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 import {
   FaBed,
   FaBath,
@@ -48,6 +49,7 @@ export default function Property({ property, openProperty }) {
               openProperty(id)
             }}
           />
+          <Link to={`/properties/${id}`}>page</Link>
         </div>
       </div>
     </PropertyWrapper>
