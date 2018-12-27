@@ -20,11 +20,13 @@ const BannerButton = styled.button`
 `
 
 const SectionButton = styled(BannerButton)`
-  color: ${styles.colors.mainBlack};
-  ${styles.border({ color: `${styles.colors.mainBlack}` })};
+  color: ${styles.colors.mainPrimary};
+  ${styles.border({ color: `${styles.colors.mainPrimary}` })};
   &:hover {
     background: ${styles.colors.mainBlack};
-    color: ${styles.colors.mainYellow};
+    color: ${styles.colors.mainPrimary};
+    ${styles.border({ color: `${styles.colors.mainBlack}` })};
+
     cursor: pointer;
   }
 `

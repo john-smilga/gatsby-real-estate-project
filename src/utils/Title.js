@@ -11,8 +11,8 @@ export function Title({ title, message }) {
   )
 }
 Title.defaultProps = {
-  message: 'our message',
-  title: 'our title',
+  message: '',
+  title: '',
 }
 
 const TitleWrapper = styled.div`
