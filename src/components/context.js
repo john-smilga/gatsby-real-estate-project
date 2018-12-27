@@ -7,6 +7,9 @@ const converter = edges => {
 
   edges.forEach(item => {
     const property = { ...item.node }
+    let tempPrice = property.price.toString().split('')
+    tempPrice.splice(3, 0, ',')
+    property.price = tempPrice
     tempProperties = [...tempProperties, property]
   })
   return tempProperties
@@ -15,39 +18,42 @@ const converter = edges => {
 export default class ProductProvider extends Component {
   constructor(props) {
     super(props)
-
+    const properties = converter(this.props.data.properties.edges)
+    const detailProperty = properties[0]
+    const featuredProperties = properties.filter(item => item.featured === true)
     this.state = {
-      properties: [],
-      tempProperties: [],
-      singleProperty: {},
-      featuredProperties: [],
+      properties: properties,
+      tempProperties: properties,
+      detailProperty: detailProperty,
+      featuredProperties: featuredProperties,
+      propertyOpen: false,
     }
   }
-  componentDidMount = () => {
-    const properties = converter(this.props.data.properties.edges)
-    const singleProperty = properties[0]
-    const featuredProperties = properties.filter(item => item.featured === true)
 
+  openProperty = id => {
+    // console.log(id)
+
+    const property = this.state.properties.find(item => item.id === id)
+    this.setState(
+      () => {
+        return { detailProperty: property, propertyOpen: true }
+      },
+      () => console.log(this.state.detailProperty.id)
+    )
+  }
+  closeProperty = () => {
     this.setState(() => {
-      return {
-        properties: properties,
-        singleProperty: singleProperty,
-        tempProperties: properties,
-        featuredProperties: featuredProperties,
-      }
+      return { propertyOpen: false }
     })
   }
-  handleProperty = id => {
-    const property = this.state.properties.filter(item => item.id === id)
-    this.setState(() => {
-      return { singleProperty: property }
-    })
-  }
-
   render() {
     return (
       <ProductContext.Provider
-        value={{ ...this.state, handleProperty: this.handleProperty }}
+        value={{
+          ...this.state,
+          openProperty: this.openProperty,
+          closeProperty: this.closeProperty,
+        }}
       >
         {this.props.children}
       </ProductContext.Provider>

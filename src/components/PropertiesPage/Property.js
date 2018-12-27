@@ -8,20 +8,10 @@ import {
   FaArrowAltCircleRight,
   FaHome,
 } from 'react-icons/fa'
-import { Link } from 'gatsby'
 import { styles } from '../../utils'
-export default function Property({ property, handleProperty }) {
+export default function Property({ property, openProperty }) {
   const fluid = property.images[0].fluid
-  const {
-    title,
-    bathrooms,
-    bedrooms,
-    garages,
-    address,
-    footage,
-    id,
-    price,
-  } = property
+  const { bathrooms, bedrooms, garages, address, footage, id, price } = property
   return (
     <PropertyWrapper>
       <div className="img-container">
@@ -52,15 +42,12 @@ export default function Property({ property, handleProperty }) {
             </span>
           </div>
 
-          <Link
-            to="/property/"
-            className="link"
+          <FaArrowAltCircleRight
+            className="property-link"
             onClick={() => {
-              handleProperty(id)
+              openProperty(id)
             }}
-          >
-            <FaArrowAltCircleRight className="property-link" />
-          </Link>
+          />
         </div>
       </div>
     </PropertyWrapper>
@@ -103,6 +90,12 @@ export const PropertyWrapper = styled.article`
   .property-link {
     font-size: 1.7rem;
     color: ${styles.colors.mainPrimary};
+    ${styles.transition({})};
+    &:hover {
+      color: ${styles.colors.mainGrey};
+      cursor: pointer;
+      transform: scale(1.1);
+    }
   }
   .footer {
     padding: 0.5rem;

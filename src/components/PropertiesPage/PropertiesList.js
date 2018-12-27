@@ -8,13 +8,17 @@ export default class PropertiesList extends Component {
       <PropertiesWrapper>
         <ProductConsumer>
           {data => {
-            return data.tempProperties.map(item => (
-              <Property
-                key={item.id}
-                property={item}
-                handleProperty={data.handleProperty}
-              />
-            ))
+            return (
+              <React.Fragment>
+                {data.tempProperties.map(item => (
+                  <Property
+                    key={item.id}
+                    property={item}
+                    openProperty={data.openProperty}
+                  />
+                ))}
+              </React.Fragment>
+            )
           }}
         </ProductConsumer>
       </PropertiesWrapper>

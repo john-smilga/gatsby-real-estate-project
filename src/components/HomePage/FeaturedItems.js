@@ -15,7 +15,7 @@ export default class FeaturedItems extends Component {
                 <Property
                   key={item.id}
                   property={item}
-                  handleProperty={data.handleProperty}
+                  openProperty={data.openProperty}
                 />
               ))
             }}
