@@ -25,6 +25,7 @@ export default class Footer extends Component {
   render() {
     return (
       <FooterWrapper>
+        <div className="title">deluxe properties</div>
         <div className="icons">
           {this.state.icons.map(item => (
             <a href={item.path} key={item.id} target="_blank">
@@ -32,7 +33,7 @@ export default class Footer extends Component {
             </a>
           ))}
         </div>
-        <p className="copyright">copyright &copy; 2018 renters</p>
+        <p className="copyright">copyright &copy; 2018 deluxe properties</p>
       </FooterWrapper>
     )
   }
@@ -60,5 +61,15 @@ const FooterWrapper = styled.footer`
     text-transform: capitalize;
     text-align: center;
     margin: 1rem 0;
+  }
+  .title {
+    display: block;
+    width: 15rem;
+    color: ${styles.colors.mainPrimary};
+    text-transform: capitalize;
+    padding: 0.3rem 1rem;
+    margin: 0 auto 1rem auto;
+    font-size: 1.5rem;
+    ${styles.border({ color: `${styles.colors.mainPrimary}` })}
   }
 `

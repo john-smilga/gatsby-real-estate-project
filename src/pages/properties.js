@@ -9,7 +9,7 @@ export default function properties() {
     <Layout>
       <SEO title="Contact" />
       <PageHeader img={img}>
-        <Banner title="our properties" />
+        <Banner pageTitle="our properties" />
       </PageHeader>
       <PropertiesList />
     </Layout>
