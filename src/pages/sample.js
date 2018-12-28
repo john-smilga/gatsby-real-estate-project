@@ -18,7 +18,7 @@ export default class sample extends Component {
     //   features,
     //   images,
     // } = this.props.pageContext.property
-    // console.log(this.props.pageContext)
+    console.log(this.props.pageContext)
 
     return (
       <Layout>
