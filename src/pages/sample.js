@@ -6,27 +6,27 @@ import Img from 'gatsby-image'
 export default class sample extends Component {
   render() {
     // const src = this.props.pageContext.property.images[0].fluid.src
-    const {
-      title,
-      address,
-      price,
-      bedrooms,
-      bathrooms,
-      footage,
-      description,
-      neighborhood,
-      features,
-      images,
-    } = this.props.pageContext.property
-    console.log(this.props.pageContext.property)
+    // const {
+    //   title,
+    //   address,
+    //   price,
+    //   bedrooms,
+    //   bathrooms,
+    //   footage,
+    //   description,
+    //   neighborhood,
+    //   features,
+    //   images,
+    // } = this.props.pageContext.property
+    // console.log(this.props.pageContext)
 
     return (
       <Layout>
-        <PageHeader>
-          <Banner pageTitle={title} />
+        <PageHeader img={this.props.pageContext.property.images[0].fluid.src}>
+          <Banner pageTitle={this.props.pageContext.property.title} />
         </PageHeader>
         <MainSection style={{ padding: '2rem 2rem' }}>
-          <DetailsHeader>
+          {/* <DetailsHeader>
             <div>
               <h2>{title}</h2>
               <h3>{address}</h3>
@@ -62,7 +62,7 @@ export default class sample extends Component {
             {features.map((item, index) => (
               <li key={index}>{item.content}</li>
             ))}
-          </FeatureWrapper>
+          </FeatureWrapper> */}
         </MainSection>
       </Layout>
     )
