@@ -22,9 +22,9 @@ export default class sample extends Component {
 
     return (
       <Layout>
-        <PageHeader img={this.props.pageContext.property.images[0].fluid.src}>
-          <Banner pageTitle={this.props.pageContext.property.title} />
-        </PageHeader>
+        {/* <PageHeader img={this.props.pageContext.property.images[0].fluid.src}> */}
+        {/* <Banner pageTitle={this.props.pageContext.property.title} /> */}
+        {/* </PageHeader> */}
         <MainSection style={{ padding: '2rem 2rem' }}>
           {/* <DetailsHeader>
             <div>
