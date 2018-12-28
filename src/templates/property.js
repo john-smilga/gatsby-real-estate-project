@@ -35,6 +35,8 @@ export default class sample extends Component {
       features,
       images,
     } = this.state.property
+    console.log(images)
+
     return (
       <Layout>
         <PageHeader img={src}>
