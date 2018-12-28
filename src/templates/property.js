@@ -22,7 +22,7 @@ export default class sample extends Component {
   render() {
     console.log(this.state.property)
 
-    // const src = this.state.property.images[0].fluid.src
+    const src = this.state.property.images[0].fluid.src
     const {
       title,
       address,
@@ -37,7 +37,7 @@ export default class sample extends Component {
     } = this.state.property
     return (
       <Layout>
-        <PageHeader>
+        <PageHeader img={src}>
           <Banner pageTitle={title} />
         </PageHeader>
         <MainSection style={{ padding: '2rem 2rem' }}>
@@ -101,6 +101,11 @@ export const query = graphql`
       }
       features {
         content
+      }
+      images {
+        fluid(maxWidth: 800) {
+          src
+        }
       }
     }
   }
