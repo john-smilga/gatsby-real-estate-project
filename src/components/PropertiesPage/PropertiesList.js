@@ -11,11 +11,7 @@ export default class PropertiesList extends Component {
             return (
               <React.Fragment>
                 {data.tempProperties.map(item => (
-                  <Property
-                    key={item.id}
-                    property={item}
-                    openProperty={data.openProperty}
-                  />
+                  <Property key={item.id} property={item} />
                 ))}
               </React.Fragment>
             )

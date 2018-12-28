@@ -7,7 +7,6 @@ import Navbar from '../components/Global/Navbar'
 import Footer from '../components/Global/Footer'
 import { ProductProvider } from './context'
 // import '../styles/sass/layout.scss'
-import SingleProperty from '../components/SingleProperty'
 const Layout = ({ children }) => {
   return (
     <StaticQuery
@@ -52,10 +51,7 @@ const Layout = ({ children }) => {
           <React.Fragment>
             <GlobalStyle />
             <Navbar />
-            <ProductProvider data={data}>
-              {children}
-              <SingleProperty />
-            </ProductProvider>
+            <ProductProvider data={data}>{children}</ProductProvider>
             <Footer />
           </React.Fragment>
         )

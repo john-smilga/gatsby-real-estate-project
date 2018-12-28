@@ -28,7 +28,12 @@ export default class Footer extends Component {
         <div className="title">deluxe properties</div>
         <div className="icons">
           {this.state.icons.map(item => (
-            <a href={item.path} key={item.id} target="_blank">
+            <a
+              href={item.path}
+              key={item.id}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {item.icon}
             </a>
           ))}

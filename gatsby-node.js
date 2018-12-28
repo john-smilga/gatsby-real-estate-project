@@ -19,12 +19,33 @@ exports.createPages = ({ graphql, actions }) => {
             edges {
               node {
                 id
-                title
+                description {
+                  description
+                }
+                neighborhood {
+                  neighborhood
+                }
+                features {
+                  content
+                }
                 images {
                   fluid(maxWidth: 800) {
                     src
+                    aspectRatio
+                    srcSet
+                    sizes
                   }
                 }
+                title
+                address
+                type
+                price
+                bedrooms
+                bathrooms
+                garages
+                city
+                footage
+                featured
               }
             }
           }
@@ -34,16 +55,11 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
         result.data.allContentfulProperties.edges.forEach(edge => {
-          console.log(edge.node.images)
-
-          console.log('hello')
-
           createPage({
             path: `/properties/${edge.node.id}`,
             component: storeTemplate,
             context: {
-              title: edge.node.title,
-              src: edge.node.images[0].fluid.src,
+              property: edge.node,
             },
           })
         })

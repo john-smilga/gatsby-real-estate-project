@@ -8,11 +8,12 @@ import {
   FaCarAlt,
   FaArrowAltCircleRight,
   FaHome,
+  FaMapMarkerAlt,
 } from 'react-icons/fa'
 import { styles } from '../../utils'
-export default function Property({ property, openProperty }) {
+export default function Property({ property }) {
   const fluid = property.images[0].fluid
-  const { bathrooms, bedrooms, garages, address, footage, id, price } = property
+  const { bathrooms, bedrooms, garages, footage, id, price, city } = property
   return (
     <PropertyWrapper>
       <div className="img-container">
@@ -22,7 +23,10 @@ export default function Property({ property, openProperty }) {
         </div>
       </div>
       <div className="footer">
-        <p className="address">{address}</p>
+        <p className="city">
+          <FaMapMarkerAlt className="map-icon" />
+          {city}
+        </p>
         <div className="property-footer">
           <div className="property-icons">
             <span className="icon-container">
@@ -43,13 +47,9 @@ export default function Property({ property, openProperty }) {
             </span>
           </div>
 
-          <FaArrowAltCircleRight
-            className="property-link"
-            onClick={() => {
-              openProperty(id)
-            }}
-          />
-          <Link to={`/properties/${id}`}>page</Link>
+          <Link to={`/properties/${id}`}>
+            <FaArrowAltCircleRight className="property-link" />
+          </Link>
         </div>
       </div>
     </PropertyWrapper>
@@ -75,6 +75,10 @@ export const PropertyWrapper = styled.article`
     justify-content: space-between;
     align-items: center;
     margin-top: 0.5rem;
+  }
+  .map-icon {
+    color: ${styles.colors.mainPrimary};
+    margin-right: 1rem;
   }
   .icon-container {
     display: flex;
@@ -102,8 +106,9 @@ export const PropertyWrapper = styled.article`
   .footer {
     padding: 0.5rem;
   }
-  .address {
+  .city {
     font-weight: bold;
+    text-transform: capitalize;
   }
   margin: 1rem 0;
   ${styles.boxShadow[0]};

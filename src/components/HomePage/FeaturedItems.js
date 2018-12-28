@@ -14,11 +14,7 @@ export default class FeaturedItems extends Component {
             <ProductConsumer>
               {data => {
                 return data.featuredProperties.map(item => (
-                  <Property
-                    key={item.id}
-                    property={item}
-                    openProperty={data.openProperty}
-                  />
+                  <Property key={item.id} property={item} />
                 ))
               }}
             </ProductConsumer>
