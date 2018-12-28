@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
+    "bluebird": "^3.5.3",
     "dotenv": "^6.2.0",
     "gatsby": "^2.0.53",
     "gatsby-image": "^2.0.20",
@@ -18,12 +19,14 @@
     "gatsby-source-contentful": "^2.0.21",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-sharp": "^2.1.8",
+    "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.2.2",
+    "slash": "^2.0.0",
     "styled-components": "^4.1.3"
   },
   "keywords": [
