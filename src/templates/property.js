@@ -1,3 +1,11 @@
+import React, { Component } from 'react'
+
+export default class property extends Component {
+  render() {
+    return <div>hello</div>
+  }
+}
+
 // import React, { Component } from 'react'
 // import Layout from '../components/layout'
 // import styled from 'styled-components'
