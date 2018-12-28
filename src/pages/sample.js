@@ -18,7 +18,7 @@ export default class sample extends Component {
     //   features,
     //   images,
     // } = this.props.pageContext.property
-    console.log(this.props)
+    console.log(this.props.pathContext)
 
     return (
       <Layout>
