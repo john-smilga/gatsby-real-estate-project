@@ -33,7 +33,7 @@ export default class sample extends Component {
       description,
       neighborhood,
       features,
-      // images,
+      images,
     } = this.state.property
     return (
       <Layout>
@@ -53,7 +53,7 @@ export default class sample extends Component {
             </div>
             <h2 className="price">$ {price}</h2>
           </DetailsHeader>
-          {/* <ImagesWrapper>
+          <ImagesWrapper>
             <div className="img">
               <Img fluid={images[1].fluid} />
             </div>
@@ -63,7 +63,7 @@ export default class sample extends Component {
             <div className="img">
               <Img fluid={images[3].fluid} />
             </div>
-          </ImagesWrapper> */}
+          </ImagesWrapper>
           <AboutProperty>
             <h3>About the Property :</h3>
             <p>{description.description}</p>
@@ -105,6 +105,7 @@ export const query = graphql`
       images {
         fluid(maxWidth: 800) {
           src
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
     }
