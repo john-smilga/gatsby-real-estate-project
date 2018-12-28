@@ -5,7 +5,7 @@ import { PageHeader, Banner, styles, MainSection } from '../utils'
 import Img from 'gatsby-image'
 export default class sample extends Component {
   render() {
-    const src = this.props.pageContext.property.images[0].fluid.src
+    // const src = this.props.pageContext.property.images[0].fluid.src
     const {
       title,
       address,
@@ -22,7 +22,7 @@ export default class sample extends Component {
 
     return (
       <Layout>
-        <PageHeader img={src}>
+        <PageHeader>
           <Banner pageTitle={title} />
         </PageHeader>
         <MainSection style={{ padding: '2rem 2rem' }}>
